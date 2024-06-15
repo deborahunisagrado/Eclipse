@@ -3,13 +3,13 @@ package br.com.senaisp.bauru.deborah.licao06;
 public class Carta {
 	public static final String[] NAIPES = {"♣", "♦", "♠", "♥"};
 	public static final String[] NUMEROS = {
-			"A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"
-	}
+			"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"
+	};
 	private String naipe;
 	private String numero;
 	//constructor
 	public Carta(int np, int vl) {
-		if(np<1 || np<4) {
+		if(np<1 || np>4) {
 			System.out.println("Naipe Inválido!");
 		}
 		if(vl<1 || vl> 13) {
@@ -27,9 +27,9 @@ public class Carta {
 					 "│  §  │\n"+
 					 "│   ##│\n"+
 					 "└─────┘\n";
-		txt = txt.replaceFirst("##", numero);
+		txt = txt.replaceFirst("##", numero + (numero.equals("10") ? "" : " "));
 		txt = txt.replace("§", naipe);
-		txt = txt.replaceFirst("##", numero);
+		txt = txt.replaceFirst("##", (numero.equals("10") ? "" : " ") + numero);
 		return txt;
 	}
 
