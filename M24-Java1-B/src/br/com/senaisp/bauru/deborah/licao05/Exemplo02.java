@@ -14,6 +14,7 @@ public class Exemplo02 {
 		System.out.println(vlr1);
 		System.out.println(vlr2);
 		System.out.println(vlr3);
+		sc.close();
 	}
 
 }
